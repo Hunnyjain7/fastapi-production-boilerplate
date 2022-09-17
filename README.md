@@ -1,4 +1,4 @@
-A FastApi Boilerplate for Production Development
+## A FastApi Boilerplate for Production Development
 
 ## Technology Stack:
 * FastAPI
