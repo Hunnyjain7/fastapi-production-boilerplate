@@ -21,7 +21,7 @@ cd project/database/database.py     #make sure you change the db connection stri
 uvicorn application:app --reload    #start server
 visit  127.0.0.1:8000/
 ```
-<br>
+
 ## Guide towards the Alembic Migrations for SqlAlchemy in FastAPI
 ```
 * Install alembic <br>
