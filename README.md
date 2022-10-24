@@ -1,7 +1,5 @@
 ## FastAPI Boilerplate for Production Development with MySql and Alembic Migrations
 
-* Work in Progress not Complete BoilerPlate yet...
-
 ## Technology Stack:
 * Python version 3.7 or above
 * FastAPI
@@ -18,9 +16,11 @@ cd fastapi-production-boilerplate
 python -m venv env                  #create a virtual environment
 .\env\Scripts\activate              #activate your virtual environment
 pip install -r requirements.txt
-cd project/database/database.py     #make sure you change the db connection string in DATABASE_URL variable
-uvicorn application:app --reload    #start server
-visit  127.0.0.1:8000/
+update your database connection string in .env
+uvicorn application:app --reload    #start server use --host for host if required
+visit Welcome screen at 127.0.0.1:8000 
+visit Swagger UI docs screen at 127.0.0.1:8000/docs  # here all api routing and request can be triggered...
+
 ```
 
 ## Guide towards the Alembic Migrations for SqlAlchemy in FastAPI
