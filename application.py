@@ -5,7 +5,11 @@ from project.common.utility import Utility
 from project.constant.status_constant import SUCCESS, FAIL
 from fastapi.responses import FileResponse
 
-app = FastAPI(title="FastApi-Boilerplate", description="A Perfect Boiler Plate For Developing In Production", version="1.0")
+# This way all the tables can be created in database but cannot be updated for that use alembic migrations
+# usr_user.Base.metadata.create_all(bind=engine)
+
+app = FastAPI(title="FastApi-Boilerplate", description="A Perfect Boiler Plate For Developing In Production",
+              version="1.0")
 
 origins = ["*"]
 
@@ -23,11 +27,11 @@ app.include_router(api_router)
 @app.get("/")
 def read_root():
     try:
-        return Utility.common_response(status=SUCCESS, message="Welcome to FastAPI Production Boilerplate", error=[],
-                                       data={})
+        return Utility.json_response(status=SUCCESS, message="Welcome to FastAPI Production Boilerplate Version: 1",
+                                     error=[], data={})
     except Exception as E:
         print(E)
-        return Utility.common_response(status=FAIL, message="Something went wrong", error=[], data={})
+        return Utility.json_response(status=FAIL, message="Something went wrong", error=[], data={})
 
 
 @app.get("/media/images/{path}/{image}")
@@ -36,5 +40,5 @@ def images(path: str, image: str):
     return FileResponse(file_location)
 
 # if __name__ == '__main__':
-#     uvicorn.run("main:app", host='192.168.1.119', port=8000, log_level="info", reload=True)
+#     uvicorn.run("application:app", host='localhost', port=8000, log_level="debug", reload=True)
 #     print("running")

@@ -1,8 +1,9 @@
-## A FastApi Boilerplate for Production Development
+## FastAPI Boilerplate for Production Development with MySql and Alembic Migrations
 
-## Work in Progress not Complete BoilerPlate yet
+* Work in Progress not Complete BoilerPlate yet...
 
 ## Technology Stack:
+* Python version 3.7 or above
 * FastAPI
 * Uvicorn (server)
 * Sqlalchemy
