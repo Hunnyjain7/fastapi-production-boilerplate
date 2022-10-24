@@ -6,7 +6,6 @@
 <p align="center">
     <em>FastAPI framework, high performance, easy to learn, fast to code, ready for production</em>
 </p>
----
 
 ## Technology Stack:
 * Python version 3.7 or above
