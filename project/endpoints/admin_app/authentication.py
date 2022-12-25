@@ -6,7 +6,6 @@ from . import APIRouter, Utility, SUCCESS, FAIL, EXCEPTION, Depends, Session, ge
 from ...schemas.register import Register
 from ...schemas.login import Login
 
-
 # APIRouter creates path operations for product module
 router = APIRouter(
     prefix="/admin",
@@ -78,4 +77,14 @@ async def register(request: Register, db: Session = Depends(get_database_session
     except Exception as E:
         print(E)
         db.rollback()
+        return Utility.json_response(status=FAIL, message="Something went wrong", error=[], data={})
+
+
+@router.get("/get-users", response_description="User List")
+def get_users(auth_user=Depends(AuthHandler().auth_wrapper), db: Session = Depends(get_database_session)):
+    try:
+        users = db.query(UsrUser).all()
+        return Utility.dict_response(status=SUCCESS, message="Users data fetched", error=[], data=users)
+    except Exception as E:
+        print(E)
         return Utility.json_response(status=FAIL, message="Something went wrong", error=[], data={})
