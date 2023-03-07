@@ -16,6 +16,55 @@
 * Alembic (database migrations)
 
 
+## Directory Tree
+```
+fastapi-production-boilerplate
+┣ project
+┃ ┣ alembic
+┃ ┃ ┣ versions
+┃ ┃ ┣ env.py
+┃ ┃ ┣ README
+┃ ┃ ┗ script.py.mako
+┃ ┣ common
+┃ ┃ ┣ auth.py
+┃ ┃ ┗ utility.py
+┃ ┣ constant
+┃ ┃ ┗ status_constant.py
+┃ ┣ database
+┃ ┃ ┗ database.py
+┃ ┣ endpoints
+┃ ┃ ┣ admin_app
+┃ ┃ ┃ ┣ authentication.py
+┃ ┃ ┃ ┗ __init__.py
+┃ ┃ ┣ client_app
+┃ ┃ ┃ ┣ client_authentication.py
+┃ ┃ ┃ ┗ __init__.py
+┃ ┃ ┗ __init__.py
+┃ ┣ media
+┃ ┃ ┣ excels
+┃ ┃ ┃ ┗ user_excels
+┃ ┃ ┗ images
+┃ ┃   ┗ profile_pics
+┃ ┣ models
+┃ ┃ ┣ cli_client.py
+┃ ┃ ┗ usr_user.py
+┃ ┣ routes
+┃ ┃ ┗ api.py
+┃ ┣ schemas
+┃ ┃ ┃ ┣ login.cpython-310.pyc
+┃ ┃ ┃ ┗ register.cpython-310.pyc
+┃ ┃ ┣ login.py
+┃ ┃ ┗ register.py
+┃ ┣ alembic.ini
+┃ ┣ test.py
+┃ ┗ __init__.py
+┣ .env
+┣ .gitignore
+┣ application.py
+┣ README.md
+┗ requirements.txt
+```
+
 ## How to start the project ?
 ```
 git clone https://github.com/Hunnyjain7/fastapi-production-boilerplate.git
