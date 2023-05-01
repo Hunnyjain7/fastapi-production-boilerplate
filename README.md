@@ -76,7 +76,7 @@ python -m venv env                  #create a virtual environment
 pip install -r requirements.txt
 update your database connection string in .env
 uvicorn application:app --reload    #start server use --host for host if required
-visit Welcome screen at 127.0.0.1:8000 
+visit Welcome screen at 127.0.0.1:8000
 visit Swagger UI docs screen at 127.0.0.1:8000/docs  # here all api routing and request can be triggered...
 
 ```
@@ -101,7 +101,7 @@ alembic upgrade head
 step 6: whenever you make changes into the models then create the revision and upgrade it, even if you remove fields from the models upgrade command will be used
 alembic revision --autogenerate -m "second migration message"
 followed by alembic upgrade first three or four initials of your recent version created in my case command was
-alembic upgrade 2a43 
+alembic upgrade 2a43
 
 to downgrade the recent migration simply alembic downgrade first three or four initials of your recent version created in my case command was
 alembic downgrade 2a43

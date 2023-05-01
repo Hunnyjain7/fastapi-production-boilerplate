@@ -1,2 +1,3 @@
-from project.endpoints import APIRouter, Body, Depends, Form, Utility, SUCCESS, FAIL, EXCEPTION, Depends, Session,\
-    get_database_session, AuthHandler
+from project.endpoints import (EXCEPTION, FAIL, SUCCESS, APIRouter,
+                               AuthHandler, Body, Depends, Form, Session,
+                               Utility, get_database_session)

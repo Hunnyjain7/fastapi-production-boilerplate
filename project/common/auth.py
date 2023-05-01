@@ -1,14 +1,16 @@
+from datetime import datetime, timedelta
+
 import jwt
 from fastapi import HTTPException, Security
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from passlib.context import CryptContext
-from datetime import datetime, timedelta
+
 from project.constant.status_constant import FAIL
 
 
 class AuthHandler:
     security = HTTPBearer()
-    pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+    pwd_context = CryptContext(schemes=['bcrypt'], deprecated='auto')
     secret = 'SECRET'
 
     def get_password_hash(self, password):
@@ -35,12 +37,12 @@ class AuthHandler:
             return payload['sub']
         except jwt.ExpiredSignatureError:
             response = {}
-            response.update(status=FAIL, message="Signature has expired", error=[], data={})
+            response.update(status=FAIL, message='Signature has expired', error=[], data={})
             raise HTTPException(status_code=401, detail=response)
         except jwt.InvalidTokenError as e:
             print(e)
             response = {}
-            response.update(status=FAIL, message="Invalid token", error=[], data={})
+            response.update(status=FAIL, message='Invalid token', error=[], data={})
             raise HTTPException(status_code=401, detail=response)
 
     def auth_wrapper(self, auth: HTTPAuthorizationCredentials = Security(security)):
