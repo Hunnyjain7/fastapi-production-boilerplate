@@ -61,6 +61,7 @@ fastapi-production-boilerplate
 ┃ ┣ test.py
 ┃ ┗ __init__.py
 ┣ .env
+┣ .env.example
 ┣ .gitignore
 ┣ application.py
 ┣ README.md
