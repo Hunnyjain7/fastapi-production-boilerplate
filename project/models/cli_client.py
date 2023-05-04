@@ -1,11 +1,11 @@
+from sqlalchemy import CHAR, DATETIME, INT, TIMESTAMP, VARCHAR, Column, String
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, INTEGER, String, TIMESTAMP, BIGINT, BOOLEAN, text, CHAR, VARCHAR, DATETIME, INT, TEXT
 
 Base = declarative_base()
 
 
 class CliClient(Base):
-    __tablename__ = "cli_client"
+    __tablename__ = 'cli_client'
     client_id = Column(CHAR(38))
     association_id = Column(CHAR(38))
     association_type_term = Column(VARCHAR(39))

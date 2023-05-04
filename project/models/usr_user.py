@@ -1,12 +1,14 @@
 from datetime import datetime
+
+from sqlalchemy import (CHAR, DATETIME, INT, TEXT, TIMESTAMP, VARCHAR, Column,
+                        String)
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, String, TIMESTAMP, CHAR, VARCHAR, DATETIME, INT, TEXT
 
 Base = declarative_base()
 
 
 class UsrUser(Base):
-    __tablename__ = "usr_user"
+    __tablename__ = 'usr_user'
     user_id = Column(CHAR(38), nullable=False)
     client_id = Column(CHAR(38))
     association_id = Column(CHAR(38))
